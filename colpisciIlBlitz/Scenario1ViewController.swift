@@ -9,43 +9,86 @@ import UIKit
 
 class Scenario1ViewController: UIViewController {
     
-    /*
-    @IBOutlet weak var buttonBlitzOutlet: UIButton!
-    
-    @IBAction func buttonBlitzAction(_ sender: Any) {
-        buttonBlitzOutlet.alpha = 0.0
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    */
-    
-    @IBOutlet weak var buttonBlitzOutlet: UIButton!
-    
     var gamestate: Int = 0 //-1 game over - 0 menu - 1 first phase - 2 boss phase
     var lifes: Int = 3
     var punteggio: Int = 0
     var timerGioco = Timer()
-    var timerSpawnBlitz1 = Timer()
-    var timerDespawnBlitz1 = Timer()
-    
     
     @IBAction func buttonBlitzAction(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            print("Ciao")
+            print("Ciao1")
             timerDespawnBlitz1.invalidate()
-            buttonBlitzOutlet.alpha = 0.0
-            buttonBlitzOutlet.isEnabled = false
-            timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
+            buttonBlitz1Outlet.alpha = 0.0
+            buttonBlitz1Outlet.isEnabled = false
+            timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
+        case 2:
+            print("Ciao2")
+            timerDespawnBlitz2.invalidate()
+            buttonBlitz2Outlet.alpha = 0.0
+            buttonBlitz2Outlet.isEnabled = false
+            timerSpawnBlitz2 = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timerSpawnBlitz2Func), userInfo: nil, repeats: false)
+        case 3:
+            print("Ciao3")
+            timerDespawnBlitz3.invalidate()
+            buttonBlitz3Outlet.alpha = 0.0
+            buttonBlitz3Outlet.isEnabled = false
+            timerSpawnBlitz2 = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerSpawnBlitz3Func), userInfo: nil, repeats: false)
+        case 4:
+            print("Ciao4")
+            timerDespawnBlitz4.invalidate()
+            buttonBlitz4Outlet.alpha = 0.0
+            buttonBlitz4Outlet.isEnabled = false
+            timerSpawnBlitz4 = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(timerSpawnBlitz4Func), userInfo: nil, repeats: false)
+        case 5:
+            print("Ciao5")
+            timerDespawnBlitz5.invalidate()
+            buttonBlitz5Outlet.alpha = 0.0
+            buttonBlitz5Outlet.isEnabled = false
+            timerSpawnBlitz5 = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerSpawnBlitz5Func), userInfo: nil, repeats: false)
         default:
             print("Error: button not found")
         }
     }
     
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //timerGioco = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerGiocoFunc), userInfo: nil, repeats: false)
+        
+        // blitz 1
+        timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
+        buttonBlitz1Outlet.alpha = 0.0
+        buttonBlitz1Outlet.isEnabled = false
+        
+        // blitz 2
+        timerSpawnBlitz2 = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timerSpawnBlitz2Func), userInfo: nil, repeats: false)
+        buttonBlitz2Outlet.alpha = 0.0
+        buttonBlitz2Outlet.isEnabled = false
+        
+        // blitz 3
+        timerSpawnBlitz3 = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerSpawnBlitz3Func), userInfo: nil, repeats: false)
+        buttonBlitz3Outlet.alpha = 0.0
+        buttonBlitz3Outlet.isEnabled = false
+        
+        // blitz 4
+        timerSpawnBlitz4 = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(timerSpawnBlitz4Func), userInfo: nil, repeats: false)
+        buttonBlitz4Outlet.alpha = 0.0
+        buttonBlitz4Outlet.isEnabled = false
+        
+        // blitz 5
+        timerSpawnBlitz5 = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerSpawnBlitz5Func), userInfo: nil, repeats: false)
+        buttonBlitz5Outlet.alpha = 0.0
+        buttonBlitz5Outlet.isEnabled = false
+    }
+    
+    
+    //==============================================
+    // gestione gioco di base
+    //==============================================
     @objc func timerGiocoFunc() {
         if punteggio >= 50 {
             gamestate = 2
@@ -54,39 +97,103 @@ class Scenario1ViewController: UIViewController {
         }
     }
     
+    //==============================================
+    // gestione blitz 1
+    //==============================================
+    @IBOutlet weak var buttonBlitz1Outlet: UIButton!
+    var timerSpawnBlitz1 = Timer()
+    var timerDespawnBlitz1 = Timer()
+    
     @objc func timerSpawnBlitz1Func() {
-        buttonBlitzOutlet.alpha = 1.0
-        buttonBlitzOutlet.isEnabled = true
+        buttonBlitz1Outlet.alpha = 1.0
+        buttonBlitz1Outlet.isEnabled = true
         timerDespawnBlitz1 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz1Func), userInfo: nil, repeats: false)
     }
     
     @objc func timerDespawnBlitz1Func() {
-        buttonBlitzOutlet.alpha = 0.0
-        buttonBlitzOutlet.isEnabled = false
-        timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //timerGioco = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerGiocoFunc), userInfo: nil, repeats: false)
+        buttonBlitz1Outlet.alpha = 0.0
+        buttonBlitz1Outlet.isEnabled = false
         timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
-        
-        
-        
-        print("cane di dio")
-        print(buttonBlitzOutlet!)
-        print("cane di dio")
-        buttonBlitzOutlet.alpha = 0.0
-        buttonBlitzOutlet.isEnabled = false
-        print("###############")
     }
-
+    
+    
+    //==============================================
+    // gestione blitz 2
+    //==============================================
+    @IBOutlet weak var buttonBlitz2Outlet: UIButton!
+    var timerSpawnBlitz2 = Timer()
+    var timerDespawnBlitz2 = Timer()
+    
+    @objc func timerSpawnBlitz2Func() {
+        buttonBlitz2Outlet.alpha = 1.0
+        buttonBlitz2Outlet.isEnabled = true
+        timerDespawnBlitz2 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz2Func), userInfo: nil, repeats: false)
+    }
+    
+    @objc func timerDespawnBlitz2Func() {
+        buttonBlitz2Outlet.alpha = 0.0
+        buttonBlitz2Outlet.isEnabled = false
+        timerSpawnBlitz2 = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timerSpawnBlitz2Func), userInfo: nil, repeats: false)
+    }
     
     
     
+    //==============================================
+    // gestione blitz 3
+    //==============================================
+    @IBOutlet weak var buttonBlitz3Outlet: UIButton!
+    var timerSpawnBlitz3 = Timer()
+    var timerDespawnBlitz3 = Timer()
     
+    @objc func timerSpawnBlitz3Func() {
+        buttonBlitz3Outlet.alpha = 1.0
+        buttonBlitz3Outlet.isEnabled = true
+        timerDespawnBlitz3 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz3Func), userInfo: nil, repeats: false)
+    }
     
+    @objc func timerDespawnBlitz3Func() {
+        buttonBlitz3Outlet.alpha = 0.0
+        buttonBlitz3Outlet.isEnabled = false
+        timerSpawnBlitz3 = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerSpawnBlitz3Func), userInfo: nil, repeats: false)
+    }
+    
+    //==============================================
+    // gestione blitz 4
+    //==============================================
+    @IBOutlet weak var buttonBlitz4Outlet: UIButton!
+    var timerSpawnBlitz4 = Timer()
+    var timerDespawnBlitz4 = Timer()
+    
+    @objc func timerSpawnBlitz4Func() {
+        buttonBlitz4Outlet.alpha = 1.0
+        buttonBlitz4Outlet.isEnabled = true
+        timerDespawnBlitz4 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz4Func), userInfo: nil, repeats: false)
+    }
+     
+    @objc func timerDespawnBlitz4Func() {
+        buttonBlitz4Outlet.alpha = 0.0
+        buttonBlitz4Outlet.isEnabled = false
+        timerSpawnBlitz4 = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(timerSpawnBlitz4Func), userInfo: nil, repeats: false)
+    }
+     
+    //==============================================
+    // gestione blitz 5
+    //==============================================
+    @IBOutlet weak var buttonBlitz5Outlet: UIButton!
+    var timerSpawnBlitz5 = Timer()
+    var timerDespawnBlitz5 = Timer()
+    
+    @objc func timerSpawnBlitz5Func() {
+        buttonBlitz5Outlet.alpha = 1.0
+        buttonBlitz5Outlet.isEnabled = true
+        timerDespawnBlitz5 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz5Func), userInfo: nil, repeats: false)
+    }
+     
+    @objc func timerDespawnBlitz5Func() {
+        buttonBlitz5Outlet.alpha = 0.0
+        buttonBlitz5Outlet.isEnabled = false
+        timerSpawnBlitz5 = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerSpawnBlitz5Func), userInfo: nil, repeats: false)
+    }
     
     /*
     // MARK: - Navigation
