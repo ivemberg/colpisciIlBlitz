@@ -126,7 +126,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wq-f9-qw2">
-                                <rect key="frame" x="827" y="342" width="40" height="31"/>
+                                <rect key="frame" x="798" y="342" width="69" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="&lt;-"/>
@@ -134,12 +134,25 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="tmk-Vn-9a3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mOM-Xt-S1F">
-                                <rect key="frame" x="95" y="39" width="693" height="334"/>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="REi-PN-W9P">
+                                <rect key="frame" x="141" y="49" width="694" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <mutableString key="text">REGOLE COLPISCI IL BLITZ
+
+Benvenuto nel nostro gioco. Odi anche tu il blitz? Non vedi l’ora di picchiarlo? Questa è l’app che fa per te!
+Avrai 60 secondi di tempo per colpire più blitz possibili e e totalizzare più punti possibili (ogni blitz ha punti diversi)….. ma attenzione!!! Se colpisci lo scudetto del Napoli inizierai a perdere punti vita anche tu! Riuscirai a totalizzare più punti possibili senza morire???
+
+
+ATTENZIONE
+Se riuscirai a totalizzare più di 50 punti in 60 secondi, ti troverai teletrasportato al cospetto del GIGACHAD BLITZ…. RIUSCIRAI A VINCERE??
+
+LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</mutableString>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="wzY-oz-6UM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -160,6 +173,9 @@
         <image name="Untitled design" width="500" height="500"/>
         <image name="colpisci il blitz" width="1920" height="1080"/>
         <image name="wp7567596" width="1920" height="1080"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
