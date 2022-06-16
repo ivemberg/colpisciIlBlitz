@@ -29,11 +29,31 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="rCk-Cv-yvo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CHI-X8-9aa">
+                                <rect key="frame" x="362" y="177" width="67" height="31"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button">
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonBlitzAction:" destination="vda-vn-kWD" eventType="touchUpInside" id="2u1-D1-y0K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vsF-wL-bpr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vsF-wL-bpr" firstAttribute="bottom" secondItem="CHI-X8-9aa" secondAttribute="bottom" constant="199" id="1JJ-DU-qfZ"/>
+                            <constraint firstItem="vsF-wL-bpr" firstAttribute="trailing" secondItem="CHI-X8-9aa" secondAttribute="trailing" constant="453" id="3Ko-lD-zai"/>
+                            <constraint firstItem="CHI-X8-9aa" firstAttribute="leading" secondItem="vsF-wL-bpr" secondAttribute="leading" constant="318" id="Z9M-JM-lhg"/>
+                            <constraint firstItem="CHI-X8-9aa" firstAttribute="top" secondItem="vsF-wL-bpr" secondAttribute="top" constant="177" id="fjd-De-PTc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JGH-Vo-M5S"/>
+                    <connections>
+                        <outlet property="buttonBlitzOutlet" destination="CHI-X8-9aa" id="iaQ-4v-WLi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIn-G8-8tN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -165,7 +185,7 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tmk-Vn-9a3"/>
+        <segue reference="rCk-Cv-yvo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="5236169" width="3840" height="2160"/>
@@ -178,6 +198,9 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
