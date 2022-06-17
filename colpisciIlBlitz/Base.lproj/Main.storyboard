@@ -145,6 +145,7 @@
                                     <color key="titleColor" red="0.97956556080000001" green="0.82401627300000002" blue="0.28625917429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonPlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X5T-lD-9Xo"/>
                                     <segue destination="vda-vn-kWD" kind="show" id="fQJ-Jm-JO6"/>
                                 </connections>
                             </button>
