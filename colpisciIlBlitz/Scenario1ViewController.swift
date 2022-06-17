@@ -23,7 +23,6 @@ class Scenario1ViewController: UIViewController {
             buttonBlitz1Outlet.alpha = 0.0
             buttonBlitz1Outlet.isEnabled = false
             timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
-            moveButton(button: buttonBlitz1Outlet)
         case 2:
             print("Ciao2")
             timerDespawnBlitz2.invalidate()
@@ -70,9 +69,9 @@ class Scenario1ViewController: UIViewController {
 
         // Generate a random x and y offset
         //let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
-        let xoffset = CGFloat(UInt32.random(in: 0...UInt32(xwidth)))
+        let xoffset = CGFloat(UInt32.random(in: (UInt32(viewWidth)/10)...UInt32(xwidth-(viewWidth/10))))
         //let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
-        let yoffset = CGFloat(UInt32.random(in: 0...UInt32(yheight)))
+        let yoffset = CGFloat(UInt32.random(in: (UInt32(viewHeight)/10)...UInt32(yheight-(viewHeight/10))))
 
         // Offset the button's center by the random offsets.
         button.center.x = xoffset + buttonWidth / 2
@@ -131,6 +130,7 @@ class Scenario1ViewController: UIViewController {
     var timerDespawnBlitz1 = Timer()
     
     @objc func timerSpawnBlitz1Func() {
+        moveButton(button: buttonBlitz1Outlet)
         buttonBlitz1Outlet.alpha = 1.0
         buttonBlitz1Outlet.isEnabled = true
         timerDespawnBlitz1 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz1Func), userInfo: nil, repeats: false)
@@ -151,6 +151,7 @@ class Scenario1ViewController: UIViewController {
     var timerDespawnBlitz2 = Timer()
     
     @objc func timerSpawnBlitz2Func() {
+        moveButton(button: buttonBlitz2Outlet)
         buttonBlitz2Outlet.alpha = 1.0
         buttonBlitz2Outlet.isEnabled = true
         timerDespawnBlitz2 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz2Func), userInfo: nil, repeats: false)
@@ -172,6 +173,7 @@ class Scenario1ViewController: UIViewController {
     var timerDespawnBlitz3 = Timer()
     
     @objc func timerSpawnBlitz3Func() {
+        moveButton(button: buttonBlitz3Outlet)
         buttonBlitz3Outlet.alpha = 1.0
         buttonBlitz3Outlet.isEnabled = true
         timerDespawnBlitz3 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz3Func), userInfo: nil, repeats: false)
@@ -191,6 +193,7 @@ class Scenario1ViewController: UIViewController {
     var timerDespawnBlitz4 = Timer()
     
     @objc func timerSpawnBlitz4Func() {
+        moveButton(button: buttonBlitz4Outlet)
         buttonBlitz4Outlet.alpha = 1.0
         buttonBlitz4Outlet.isEnabled = true
         timerDespawnBlitz4 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz4Func), userInfo: nil, repeats: false)
@@ -210,6 +213,7 @@ class Scenario1ViewController: UIViewController {
     var timerDespawnBlitz5 = Timer()
     
     @objc func timerSpawnBlitz5Func() {
+        moveButton(button: buttonBlitz5Outlet)
         buttonBlitz5Outlet.alpha = 1.0
         buttonBlitz5Outlet.isEnabled = true
         timerDespawnBlitz5 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz5Func), userInfo: nil, repeats: false)
