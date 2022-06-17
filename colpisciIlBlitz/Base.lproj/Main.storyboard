@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4P-L5-gSz">
-                                <rect key="frame" x="831" y="359" width="40" height="40"/>
+                                <rect key="frame" x="811" y="359" width="60" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="&lt;-"/>
@@ -91,6 +91,18 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Thug-Life-Cigarette-PNG-Image" translatesAutoresizingMaskIntoConstraints="NO" id="gIN-V6-wOX">
+                                <rect key="frame" x="801" y="-19" width="80" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Thug-Life-Cigarette-PNG-Image" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-mV-pJ0">
+                                <rect key="frame" x="820" y="-19" width="80" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Thug-Life-Cigarette-PNG-Image" translatesAutoresizingMaskIntoConstraints="NO" id="clY-9I-yyk">
+                                <rect key="frame" x="838" y="-19" width="80" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vsF-wL-bpr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -259,6 +271,7 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         <image name="4" width="125" height="125"/>
         <image name="5" width="125" height="125"/>
         <image name="5236169" width="3840" height="2160"/>
+        <image name="Thug-Life-Cigarette-PNG-Image" width="2395" height="889"/>
         <image name="Untitled design" width="500" height="500"/>
         <image name="colpisci il blitz" width="1920" height="1080"/>
         <image name="wp7567596" width="1920" height="1080"/>
