@@ -17,6 +17,10 @@ class Scenario1ViewController: UIViewController {
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var punti: UILabel!
     
+    
+    @IBOutlet weak var time: UILabel!
+    
+    
     @IBAction func buttonBlitzAction(_ sender: UIButton) {
         switch sender.tag {
         case 1:
@@ -89,9 +93,11 @@ class Scenario1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         playGameTrack()
         // timer di gioco
         timerGioco = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerGiocoFunc), userInfo: nil, repeats: false)
+        timerLabel = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timeLabel), userInfo: nil, repeats: true)
         
         // blitz 1
         timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
@@ -117,6 +123,8 @@ class Scenario1ViewController: UIViewController {
         timerSpawnBlitz5 = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerSpawnBlitz5Func), userInfo: nil, repeats: false)
         buttonBlitz5Outlet.alpha = 0.0
         buttonBlitz5Outlet.isEnabled = false
+        
+        
     }
     
     
@@ -124,6 +132,7 @@ class Scenario1ViewController: UIViewController {
     // gestione gioco di base
     //==============================================
     var timerGioco = Timer()
+    var timerLabel = Timer()
     @objc func timerGiocoFunc() {
         timerSpawnBlitz1.invalidate()
         timerDespawnBlitz1.invalidate()
@@ -347,6 +356,13 @@ class Scenario1ViewController: UIViewController {
         buttonBlitz1Outlet.alpha = 1.0
         buttonBlitz1Outlet.isEnabled = true
         timerDespawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerDespawnBlitz1Func), userInfo: nil, repeats: false)
+    }
+    @objc func timeLabel() {
+        if time.text! != "0" {
+        time.text! = String(Int(time.text!)! - 1)
+        } else {
+            timerLabel.invalidate()
+        }
     }
     
     

@@ -103,6 +103,13 @@
                                 <rect key="frame" x="838" y="-19" width="80" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DA9-r1-BUe">
+                                <rect key="frame" x="446" y="-1" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vsF-wL-bpr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -116,6 +123,7 @@
                         <outlet property="buttonBlitz5Outlet" destination="t7k-xJ-xm2" id="uXL-u4-ZXL"/>
                         <outlet property="punti" destination="n0e-he-4vT" id="xqv-Vb-JyO"/>
                         <outlet property="score" destination="cU0-My-6i3" id="qxh-Uw-aHR"/>
+                        <outlet property="time" destination="DA9-r1-BUe" id="hkQ-NT-k0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIn-G8-8tN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
