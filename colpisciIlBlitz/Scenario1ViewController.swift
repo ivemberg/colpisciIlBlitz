@@ -69,8 +69,10 @@ class Scenario1ViewController: UIViewController {
         let yheight = viewHeight - buttonHeight
 
         // Generate a random x and y offset
-        let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
-        let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
+        //let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
+        let xoffset = CGFloat(UInt32.random(in: 0...UInt32(xwidth)))
+        //let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
+        let yoffset = CGFloat(UInt32.random(in: 0...UInt32(yheight)))
 
         // Offset the button's center by the random offsets.
         button.center.x = xoffset + buttonWidth / 2
