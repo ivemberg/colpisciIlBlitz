@@ -12,9 +12,7 @@ import AVFoundation
 class Scenario1ViewController: UIViewController {
     var gameTrackPlayer: AVAudioPlayer!
     
-    var gamestate: Int = 0 //-1 game over - 0 menu - 1 first phase - 2 boss phase
     var lifes: Int = 3
-    var timerGioco = Timer()
     
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var punti: UILabel!
@@ -23,7 +21,7 @@ class Scenario1ViewController: UIViewController {
         switch sender.tag {
         case 1:
             print("Ciao1")
-            punti.text! = "\((Int(punti.text!)! + 1))"
+            punti.text! = valueBlitz1 != 9 ? "\((Int(punti.text!)! + valueBlitz1))" : punti.text!
             timerDespawnBlitz1.invalidate()
             buttonBlitz1Outlet.alpha = 0.0
             buttonBlitz1Outlet.isEnabled = false
@@ -92,7 +90,8 @@ class Scenario1ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playGameTrack()
-        //timerGioco = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerGiocoFunc), userInfo: nil, repeats: false)
+        // timer di gioco
+        timerGioco = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerGiocoFunc), userInfo: nil, repeats: false)
         
         // blitz 1
         timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
@@ -124,11 +123,37 @@ class Scenario1ViewController: UIViewController {
     //==============================================
     // gestione gioco di base
     //==============================================
+    var timerGioco = Timer()
     @objc func timerGiocoFunc() {
+        timerSpawnBlitz1.invalidate()
+        timerDespawnBlitz1.invalidate()
+        buttonBlitz1Outlet.alpha = 0.0
+        buttonBlitz1Outlet.isEnabled = false
+        
+        timerSpawnBlitz2.invalidate()
+        timerDespawnBlitz2.invalidate()
+        buttonBlitz2Outlet.alpha = 0.0
+        buttonBlitz2Outlet.isEnabled = false
+        
+        timerSpawnBlitz3.invalidate()
+        timerDespawnBlitz3.invalidate()
+        buttonBlitz3Outlet.alpha = 0.0
+        buttonBlitz3Outlet.isEnabled = false
+        
+        timerSpawnBlitz4.invalidate()
+        timerDespawnBlitz4.invalidate()
+        buttonBlitz4Outlet.alpha = 0.0
+        buttonBlitz4Outlet.isEnabled = false
+        
+        timerSpawnBlitz5.invalidate()
+        timerDespawnBlitz5.invalidate()
+        buttonBlitz5Outlet.alpha = 0.0
+        buttonBlitz5Outlet.isEnabled = false
+        
         if Int(punti.text!)! >= 50 {
-            gamestate = 2
+            print("si")
         } else {
-            gamestate = -1
+            print("no")
         }
     }
     
@@ -138,18 +163,37 @@ class Scenario1ViewController: UIViewController {
     @IBOutlet weak var buttonBlitz1Outlet: UIButton!
     var timerSpawnBlitz1 = Timer()
     var timerDespawnBlitz1 = Timer()
+    var valueBlitz1: Int = 0
     
     @objc func timerSpawnBlitz1Func() {
-        moveButton(button: buttonBlitz1Outlet)
-        buttonBlitz1Outlet.alpha = 1.0
-        buttonBlitz1Outlet.isEnabled = true
-        timerDespawnBlitz1 = Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(timerDespawnBlitz1Func), userInfo: nil, repeats: false)
+        randomBlitz1()
     }
     
     @objc func timerDespawnBlitz1Func() {
         buttonBlitz1Outlet.alpha = 0.0
         buttonBlitz1Outlet.isEnabled = false
-        timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
+        var time = 0.0
+        switch valueBlitz1 {
+        case 1:
+            time = 0.5
+        case 2:
+            time = 1
+        case 3:
+            time = 1.25
+        case 4:
+            time = 1.5
+        case 5:
+            time = 1.75
+        case 6:
+            time = 2
+        case 7:
+            time = 2.5
+        case 8:
+            time = 3
+        default:
+            time = 2
+        }
+        timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: time, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
     }
     
     
@@ -262,6 +306,51 @@ class Scenario1ViewController: UIViewController {
     @IBAction func buttonBackAction(_ sender: UIButton) {
         gameTrackPlayer.stop()
     }
+    
+    /*  Sprite | Valore | Respawn
+     *  1 | 1 | 0.5
+     *  2 | 2 | 1
+     *  3 | 3 | 1.25
+     *  4 | 4 | 1.5
+     *  5 | 5 | 1.75
+     *  6 | 6 | 2
+     *  7 | 7 | 2.5
+     *  8 | 8 | 3
+     *  9 | -1 vita | 2
+     */
+    
+    func randomBlitz1() {
+        let i = Int.random(in: 0...1000)
+        
+        if i <= 200 {
+            valueBlitz1 = 1
+        } else if i <= 350 {
+            valueBlitz1 = 2
+        } else if i <= 500 {
+            valueBlitz1 = 3
+        } else if i <= 600 {
+            valueBlitz1 = 4
+        } else if i <= 700 {
+            valueBlitz1 = 5
+        } else if i <= 750 {
+            valueBlitz1 = 6
+        } else if i <= 800 {
+            valueBlitz1 = 7
+        } else if i <= 825 {
+            valueBlitz1 = 8
+        } else {
+            valueBlitz1 = 9
+        }
+        
+        buttonBlitz1Outlet.setImage(UIImage(named: String(valueBlitz1)), for: UIControl.State.normal)
+        moveButton(button: buttonBlitz1Outlet)
+        buttonBlitz1Outlet.alpha = 1.0
+        buttonBlitz1Outlet.isEnabled = true
+        timerDespawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerDespawnBlitz1Func), userInfo: nil, repeats: false)
+    }
+    
+    
+    
     
     /*
     // MARK: - Navigation
