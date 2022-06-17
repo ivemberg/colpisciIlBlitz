@@ -7,8 +7,10 @@
 
 import UIKit
 import SpriteKit
+import AVFoundation
 
 class Scenario1ViewController: UIViewController {
+    var gameTrackPlayer: AVAudioPlayer!
     
     var gamestate: Int = 0 //-1 game over - 0 menu - 1 first phase - 2 boss phase
     var lifes: Int = 3
@@ -82,6 +84,7 @@ class Scenario1ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playGameTrack()
         //timerGioco = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerGiocoFunc), userInfo: nil, repeats: false)
         
         // blitz 1
@@ -225,6 +228,34 @@ class Scenario1ViewController: UIViewController {
         timerSpawnBlitz5 = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(timerSpawnBlitz5Func), userInfo: nil, repeats: false)
     }
     
+    //==============================================
+    // gestione audio
+    //==============================================
+    func playGameTrack() {
+        guard let url = Bundle.main.url(forResource: "mp3/gameTrack", withExtension: "mp3") else {
+            print("RETURNING ")
+            return
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            gameTrackPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = gameTrackPlayer else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print("Error was detected")
+            print(error.localizedDescription)
+        }
+    }
+    @IBAction func buttonBackAction(_ sender: UIButton) {
+        gameTrackPlayer.stop()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -234,5 +265,4 @@ class Scenario1ViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

@@ -26,6 +26,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="&lt;-"/>
                                 <connections>
+                                    <action selector="buttonBackAction:" destination="vda-vn-kWD" eventType="touchUpInside" id="9O8-CV-Xb2"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="rCk-Cv-yvo"/>
                                 </connections>
                             </button>
