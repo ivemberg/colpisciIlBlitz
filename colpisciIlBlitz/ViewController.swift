@@ -6,19 +6,24 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
+    var introPlayer: AVAudioPlayer!
+    
+    @IBAction func buttonPlayAction(_ sender: UIButton) {
+        introPlayer.stop()
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        playIntro()
         // Do any additional setup after loading the view.
     }
     
-    func playIntro(_ sound: String) {
-        let repo = "mp3/" + selectedInstrument + "/" + sound
-        
-        guard let url = Bundle.main.url(forResource: repo, withExtension: "mp3") else {
+    func playIntro() {
+        guard let url = Bundle.main.url(forResource: "mp3/menuTrack", withExtension: "mp3") else {
             print("RETURNING ")
             return
         }
@@ -27,9 +32,9 @@ class ViewController: UIViewController {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            notePlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            introPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
-            guard let player = notePlayer else { return }
+            guard let player = introPlayer else { return }
             
             player.play()
             

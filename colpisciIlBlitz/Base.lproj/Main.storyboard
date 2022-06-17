@@ -154,6 +154,7 @@
                                     <color key="titleColor" red="0.97956556080000001" green="0.82401627300000002" blue="0.28625917429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="buttonPlayAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="omB-R9-81T"/>
                                     <segue destination="vda-vn-kWD" kind="show" id="fQJ-Jm-JO6"/>
                                 </connections>
                             </button>
@@ -237,7 +238,7 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="5236169" width="3840" height="2160"/>
-        <image name="9" width="500" height="500"/>
+        <image name="9" width="125" height="125"/>
         <image name="Untitled design" width="500" height="500"/>
         <image name="colpisci il blitz" width="1920" height="1080"/>
         <image name="wp7567596" width="1920" height="1080"/>
