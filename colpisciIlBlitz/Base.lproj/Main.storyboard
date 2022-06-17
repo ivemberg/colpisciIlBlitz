@@ -95,10 +95,6 @@
                                 <rect key="frame" x="801" y="-19" width="80" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Thug-Life-Cigarette-PNG-Image" translatesAutoresizingMaskIntoConstraints="NO" id="mmO-Q2-2Ru">
-                                <rect key="frame" x="423" y="179" width="80" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Thug-Life-Cigarette-PNG-Image" translatesAutoresizingMaskIntoConstraints="NO" id="Kge-mV-pJ0">
                                 <rect key="frame" x="820" y="-19" width="80" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
