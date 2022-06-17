@@ -9,6 +9,8 @@ import UIKit
 
 class BossFinaleViewController: UIViewController {
 
+    @IBOutlet weak var BossProgressView: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
