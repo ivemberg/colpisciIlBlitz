@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 class Scenario1ViewController: UIViewController {
     
@@ -22,6 +23,7 @@ class Scenario1ViewController: UIViewController {
             buttonBlitz1Outlet.alpha = 0.0
             buttonBlitz1Outlet.isEnabled = false
             timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
+            moveButton(button: buttonBlitz1Outlet)
         case 2:
             print("Ciao2")
             timerDespawnBlitz2.invalidate()
@@ -49,9 +51,31 @@ class Scenario1ViewController: UIViewController {
         default:
             print("Error: button not found")
         }
+        
+        
     }
     
-    
+    @IBAction func moveButton(button: UIButton) {
+        // Find the button's width and height
+        let buttonWidth = button.frame.width
+        let buttonHeight = button.frame.height
+
+        // Find the width and height of the enclosing view
+        let viewWidth = button.superview!.bounds.width
+        let viewHeight = button.superview!.bounds.height
+
+        // Compute width and height of the area to contain the button's center
+        let xwidth = viewWidth - buttonWidth
+        let yheight = viewHeight - buttonHeight
+
+        // Generate a random x and y offset
+        let xoffset = CGFloat(arc4random_uniform(UInt32(xwidth)))
+        let yoffset = CGFloat(arc4random_uniform(UInt32(yheight)))
+
+        // Offset the button's center by the random offsets.
+        button.center.x = xoffset + buttonWidth / 2
+        button.center.y = yoffset + buttonHeight / 2
+    }
     
     
     
