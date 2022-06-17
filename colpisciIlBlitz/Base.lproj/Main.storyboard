@@ -199,6 +199,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="?"/>
                                 <connections>
+                                    <action selector="rulesButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BXE-cj-vze"/>
                                     <segue destination="MHU-qz-CFD" kind="show" id="PtA-s8-vbB"/>
                                 </connections>
                             </button>
@@ -268,7 +269,7 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rCk-Cv-yvo"/>
+        <segue reference="tmk-Vn-9a3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="125" height="125"/>

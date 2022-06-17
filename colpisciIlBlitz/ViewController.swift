@@ -15,6 +15,9 @@ class ViewController: UIViewController {
         introPlayer.stop()
     }
     
+    @IBAction func rulesButton(_ sender: UIButton) {
+        introPlayer.stop()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
