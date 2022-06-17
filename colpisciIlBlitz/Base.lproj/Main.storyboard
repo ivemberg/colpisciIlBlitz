@@ -110,6 +110,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="progressTintColor" systemColor="systemRedColor"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNv-XX-oWG">
+                                <rect key="frame" x="428" y="140" width="173" height="199"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="10"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V6W-gK-mw9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -186,19 +192,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="REi-PN-W9P">
-                                <rect key="frame" x="116" y="40" width="694" height="348"/>
+                                <rect key="frame" x="116" y="40" width="694" height="349"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">REGOLE COLPISCI IL BLITZ
+                                <mutableString key="text">REGOLE COLPISCI IL BLITZ
 
 Benvenuto nel nostro gioco. Odi anche tu il blitz? Non vedi l’ora di picchiarlo? Questa è l’app che fa per te!
 Avrai 60 secondi di tempo per colpire più blitz possibili e e totalizzare più punti possibili (ogni blitz ha punti diversi)….. ma attenzione!!! Se colpisci lo scudetto del Napoli inizierai a perdere punti vita anche tu! Riuscirai a totalizzare più punti possibili senza morire???
 
 
 ATTENZIONE
-Se riuscirai a totalizzare più di 50 punti in 60 secondi, ti troverai teletrasportato al cospetto del GIGACHAD BLITZ…. RIUSCIRAI A VINCERE??
+Se riuscirai a totalizzare più di 50 punti in 60 secondi, ti troverai teletrasportato al cospetto del GIGACHAD BLITZ…. RIUSCIRAI A VINCERE?? PICCOLO SUGGERIMENTO.. PUNTATE ALLA PANCIA
 
-LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
+LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</mutableString>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -225,10 +231,11 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rCk-Cv-yvo"/>
+        <segue reference="tmk-Vn-9a3"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="125" height="125"/>
+        <image name="10" width="500" height="500"/>
         <image name="2" width="125" height="125"/>
         <image name="3" width="125" height="125"/>
         <image name="4" width="125" height="125"/>
