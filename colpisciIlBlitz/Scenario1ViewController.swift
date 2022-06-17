@@ -14,37 +14,44 @@ class Scenario1ViewController: UIViewController {
     
     var gamestate: Int = 0 //-1 game over - 0 menu - 1 first phase - 2 boss phase
     var lifes: Int = 3
-    var punteggio: Int = 0
     var timerGioco = Timer()
+    
+    @IBOutlet weak var score: UILabel!
+    @IBOutlet weak var punti: UILabel!
     
     @IBAction func buttonBlitzAction(_ sender: UIButton) {
         switch sender.tag {
         case 1:
             print("Ciao1")
+            punti.text! = "\((Int(punti.text!)! + 1))"
             timerDespawnBlitz1.invalidate()
             buttonBlitz1Outlet.alpha = 0.0
             buttonBlitz1Outlet.isEnabled = false
             timerSpawnBlitz1 = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnBlitz1Func), userInfo: nil, repeats: false)
         case 2:
             print("Ciao2")
+            punti.text! = "\((Int(punti.text!)! + 2))"
             timerDespawnBlitz2.invalidate()
             buttonBlitz2Outlet.alpha = 0.0
             buttonBlitz2Outlet.isEnabled = false
             timerSpawnBlitz2 = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(timerSpawnBlitz2Func), userInfo: nil, repeats: false)
         case 3:
             print("Ciao3")
+            punti.text! = "\((Int(punti.text!)! + 3))"
             timerDespawnBlitz3.invalidate()
             buttonBlitz3Outlet.alpha = 0.0
             buttonBlitz3Outlet.isEnabled = false
             timerSpawnBlitz2 = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerSpawnBlitz3Func), userInfo: nil, repeats: false)
         case 4:
             print("Ciao4")
+            punti.text! = "\((Int(punti.text!)! + 4))"
             timerDespawnBlitz4.invalidate()
             buttonBlitz4Outlet.alpha = 0.0
             buttonBlitz4Outlet.isEnabled = false
             timerSpawnBlitz4 = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(timerSpawnBlitz4Func), userInfo: nil, repeats: false)
         case 5:
             print("Ciao5")
+            punti.text! = "\((Int(punti.text!)! - 1 ))"
             timerDespawnBlitz5.invalidate()
             buttonBlitz5Outlet.alpha = 0.0
             buttonBlitz5Outlet.isEnabled = false
@@ -118,7 +125,7 @@ class Scenario1ViewController: UIViewController {
     // gestione gioco di base
     //==============================================
     @objc func timerGiocoFunc() {
-        if punteggio >= 50 {
+        if Int(punti.text!)! >= 50 {
             gamestate = 2
         } else {
             gamestate = -1

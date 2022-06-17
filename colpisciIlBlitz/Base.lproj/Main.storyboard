@@ -77,6 +77,20 @@
                                     <action selector="buttonBlitzAction:" destination="vda-vn-kWD" eventType="touchUpInside" id="vuL-u7-gFj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cU0-My-6i3">
+                                <rect key="frame" x="48" y="0.0" width="67" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0e-he-4vT">
+                                <rect key="frame" x="123" y="0.0" width="84" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vsF-wL-bpr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -88,6 +102,8 @@
                         <outlet property="buttonBlitz3Outlet" destination="i33-vz-OPj" id="nBX-1T-0NY"/>
                         <outlet property="buttonBlitz4Outlet" destination="RXa-Tp-Sso" id="LLs-8M-B8m"/>
                         <outlet property="buttonBlitz5Outlet" destination="t7k-xJ-xm2" id="uXL-u4-ZXL"/>
+                        <outlet property="punti" destination="n0e-he-4vT" id="xqv-Vb-JyO"/>
+                        <outlet property="score" destination="cU0-My-6i3" id="qxh-Uw-aHR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIn-G8-8tN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -196,7 +212,7 @@
                                 <rect key="frame" x="116" y="40" width="694" height="349"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">REGOLE COLPISCI IL BLITZ
+                                <string key="text">REGOLE COLPISCI IL BLITZ
 
 Benvenuto nel nostro gioco. Odi anche tu il blitz? Non vedi l’ora di picchiarlo? Questa è l’app che fa per te!
 Avrai 60 secondi di tempo per colpire più blitz possibili e e totalizzare più punti possibili (ogni blitz ha punti diversi)….. ma attenzione!!! Se colpisci lo scudetto del Napoli inizierai a perdere punti vita anche tu! Riuscirai a totalizzare più punti possibili senza morire???
@@ -205,7 +221,7 @@ Avrai 60 secondi di tempo per colpire più blitz possibili e e totalizzare più 
 ATTENZIONE
 Se riuscirai a totalizzare più di 50 punti in 60 secondi, ti troverai teletrasportato al cospetto del GIGACHAD BLITZ…. RIUSCIRAI A VINCERE?? PICCOLO SUGGERIMENTO.. PUNTATE ALLA PANCIA
 
-LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</mutableString>
+LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -232,7 +248,7 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</mutableString>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tmk-Vn-9a3"/>
+        <segue reference="rCk-Cv-yvo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="125" height="125"/>
