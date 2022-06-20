@@ -109,6 +109,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqV-A1-oHq" userLabel="BossFight">
+                                <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="BOSS FINALE"/>
+                                <connections>
+                                    <segue destination="Nu6-mE-hKE" kind="show" id="jKL-LX-S7n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBy-0b-aWO" userLabel="Pentito">
+                                <rect key="frame" x="0.0" y="-1" width="926" height="429"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="PENTITO"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="7Ck-DG-hXK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vsF-wL-bpr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -180,6 +200,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Blo-tX-kNh" userLabel="PentitoBoss">
+                                <rect key="frame" x="0.0" y="0.0" width="926" height="428"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="PENTITO"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="mPw-J8-SMd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdT-a9-0c8" userLabel="Chapeau">
+                                <rect key="frame" x="-145" y="-25" width="1071" height="529"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="tertiaryLabelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="CHAPEAU!"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="XHf-xE-Ypj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="V6W-gK-mw9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -299,7 +339,7 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rCk-Cv-yvo"/>
+        <segue reference="mPw-J8-SMd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="125" height="125"/>
@@ -309,6 +349,9 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         <image name="4" width="125" height="125"/>
         <image name="5" width="125" height="125"/>
         <image name="5236169" width="3840" height="2160"/>
+        <image name="BOSS FINALE" width="500" height="500"/>
+        <image name="CHAPEAU!" width="500" height="500"/>
+        <image name="PENTITO" width="500" height="500"/>
         <image name="Thug-Life-Cigarette-PNG-Image" width="2395" height="889"/>
         <image name="Untitled design" width="500" height="500"/>
         <image name="colpisci il blitz" width="1920" height="1080"/>
@@ -318,6 +361,9 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
