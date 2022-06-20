@@ -17,4 +17,4 @@ Here you can read the rules of the game, they are important to complete the game
 
 #GAME_ARENA
 
-This is the area where you can play. You must to click a lot of blitz in 60 seconds.
+This is the area where you can play. Hit as many blitzes as possible, if you totalize 100 points you fight with the final boss
