@@ -211,6 +211,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="PENTITO"/>
                                 <connections>
+                                    <action selector="buttonEndAction:" destination="Nu6-mE-hKE" eventType="touchUpInside" id="UwI-Xr-aeh"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="mPw-J8-SMd"/>
                                 </connections>
                             </button>
@@ -221,6 +222,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="CHAPEAU!"/>
                                 <connections>
+                                    <action selector="buttonEndAction:" destination="Nu6-mE-hKE" eventType="touchUpInside" id="aB0-ms-fsv"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="XHf-xE-Ypj"/>
                                 </connections>
                             </button>
@@ -230,6 +232,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="9i5-JS-rkG"/>
                     <connections>
+                        <outlet property="buttonChapeauOutlet" destination="cdT-a9-0c8" id="ZEh-eh-GCC"/>
+                        <outlet property="buttonPentitoOutlet" destination="Blo-tX-kNh" id="q4f-Ro-hBF"/>
                         <outlet property="hp" destination="WDl-Ht-weq" id="tbI-uM-BGe"/>
                         <outlet property="hpLabel" destination="oQO-9b-N0O" id="Szb-0j-LHb"/>
                         <outlet property="time" destination="OwF-el-amp" id="StA-jt-LHX"/>
@@ -343,7 +347,7 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7Ck-DG-hXK"/>
+        <segue reference="mPw-J8-SMd"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="125" height="125"/>

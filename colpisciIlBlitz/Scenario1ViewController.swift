@@ -11,6 +11,8 @@ import AVFoundation
 
 class Scenario1ViewController: UIViewController {
     var gameTrackPlayer: AVAudioPlayer!
+    var scudettoPlayer: AVAudioPlayer!
+    var pentitoPlayer: AVAudioPlayer!
     
     var lifes: Int = 3
     
@@ -138,7 +140,7 @@ class Scenario1ViewController: UIViewController {
     var timerLabel = Timer()
     
     @objc func timerGiocoFunc() {
-        if Int(punti.text!)! >= 100 {
+        if Int(punti.text!)! >= 200 {
             fineGame(true)
         } else {
             fineGame(false)
@@ -188,6 +190,8 @@ class Scenario1ViewController: UIViewController {
             buttonBossFinaleOutlet.alpha = 1.0
             buttonBossFinaleOutlet.isEnabled = true
         } else {
+            gameTrackPlayer.stop()
+            playPentito()
             buttonPentitoOutlet.alpha = 1.0
             buttonPentitoOutlet.isEnabled = true
         }
@@ -243,6 +247,50 @@ class Scenario1ViewController: UIViewController {
             gameTrackPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
             guard let player = gameTrackPlayer else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print("Error was detected")
+            print(error.localizedDescription)
+        }
+    }
+    
+    func playScudetto() {
+        guard let url = Bundle.main.url(forResource: "mp3/scudettoSound", withExtension: "mp3") else {
+            print("RETURNING ")
+            return
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            scudettoPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = scudettoPlayer else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print("Error was detected")
+            print(error.localizedDescription)
+        }
+    }
+    
+    func playPentito() {
+        guard let url = Bundle.main.url(forResource: "mp3/povero-gabbiano", withExtension: "mp3") else {
+            print("RETURNING ")
+            return
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            pentitoPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = pentitoPlayer else { return }
             
             player.play()
             
