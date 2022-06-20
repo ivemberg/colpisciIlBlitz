@@ -17,7 +17,7 @@ Here you can read the rules of the game, they are important to complete the game
 
 #GAME_ARENA
 
-This is the area where you can play. Hit as many blitzes as possible, if you totalize 200 points you fight with the final boss
+This is the area where you can play. Hit as many blitzes as possible, if you totalize 200 points you fight with the final boss. You have 3 lifes, if you tap Napoli's logo you lost 1 life.
 
 ![Simulator Screen Shot - iPhone 13 Pro Max - 2022-06-20 at 14 34 53](https://user-images.githubusercontent.com/66513963/174603502-250c5017-2160-47a6-843a-d0301ee44635.png)
 
