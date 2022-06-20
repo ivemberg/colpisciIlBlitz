@@ -16,6 +16,7 @@
 		3CF60232285B393500FE059D /* Scenario1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF60231285B393500FE059D /* Scenario1ViewController.swift */; };
 		3CF60234285B412100FE059D /* BossFinaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF60233285B412100FE059D /* BossFinaleViewController.swift */; };
 		CE4992E7285C697D00CF94CC /* mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CE4992E6285C697D00CF94CC /* mp3 */; };
+		CE4992E9285CB1F600CF94CC /* Blitzino.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4992E8285CB1F600CF94CC /* Blitzino.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3CF60231285B393500FE059D /* Scenario1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenario1ViewController.swift; sourceTree = "<group>"; };
 		3CF60233285B412100FE059D /* BossFinaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossFinaleViewController.swift; sourceTree = "<group>"; };
 		CE4992E6285C697D00CF94CC /* mp3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = mp3; sourceTree = "<group>"; };
+		CE4992E8285CB1F600CF94CC /* Blitzino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blitzino.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				3CF6022B285B236200FE059D /* Info.plist */,
 				3CF60231285B393500FE059D /* Scenario1ViewController.swift */,
 				3CF60233285B412100FE059D /* BossFinaleViewController.swift */,
+				CE4992E8285CB1F600CF94CC /* Blitzino.swift */,
 			);
 			path = colpisciIlBlitz;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4992E9285CB1F600CF94CC /* Blitzino.swift in Sources */,
 				3CF60234285B412100FE059D /* BossFinaleViewController.swift in Sources */,
 				3CF60232285B393500FE059D /* Scenario1ViewController.swift in Sources */,
 				3CF60222285B235D00FE059D /* ViewController.swift in Sources */,
