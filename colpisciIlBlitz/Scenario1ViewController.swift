@@ -329,6 +329,12 @@ class Scenario1ViewController: UIViewController {
      */
     
     func randomBlitz1() {
+        
+        
+        if Int(self.time.text!)! <= 0 {
+            return
+        }
+        
         let i = Int.random(in: 0...1000)
         
         if i <= 200 {
