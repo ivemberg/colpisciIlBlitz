@@ -116,6 +116,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="BOSS FINALE"/>
                                 <connections>
+                                    <action selector="finalScreen:" destination="vda-vn-kWD" eventType="touchUpInside" id="cRV-ts-hAP"/>
                                     <segue destination="Nu6-mE-hKE" kind="show" id="jKL-LX-S7n"/>
                                 </connections>
                             </button>
@@ -126,6 +127,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="PENTITO"/>
                                 <connections>
+                                    <action selector="finalScreen:" destination="vda-vn-kWD" eventType="touchUpInside" id="IDK-NE-M8h"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7Ck-DG-hXK"/>
                                 </connections>
                             </button>
@@ -140,6 +142,8 @@
                         <outlet property="buttonBlitz3Outlet" destination="i33-vz-OPj" id="1wQ-JR-vje"/>
                         <outlet property="buttonBlitz4Outlet" destination="RXa-Tp-Sso" id="9OP-cL-DOM"/>
                         <outlet property="buttonBlitz5Outlet" destination="t7k-xJ-xm2" id="oHV-jy-gZa"/>
+                        <outlet property="buttonBossFinaleOutlet" destination="cqV-A1-oHq" id="oL5-5Q-6ZU"/>
+                        <outlet property="buttonPentitoOutlet" destination="oBy-0b-aWO" id="GXq-cJ-nde"/>
                         <outlet property="punti" destination="n0e-he-4vT" id="xqv-Vb-JyO"/>
                         <outlet property="spriteLife1Outlet" destination="gIN-V6-wOX" id="nk2-Qr-lJw"/>
                         <outlet property="spriteLife2Outlet" destination="Kge-mV-pJ0" id="hfs-zC-BYL"/>
@@ -339,7 +343,7 @@ LASCIATE OGNI SPERANZA O VOI CHE ENTRATE</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mPw-J8-SMd"/>
+        <segue reference="7Ck-DG-hXK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="125" height="125"/>
