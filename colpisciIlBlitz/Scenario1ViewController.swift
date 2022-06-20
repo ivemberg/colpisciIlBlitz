@@ -14,29 +14,49 @@ class Scenario1ViewController: UIViewController {
     
     var lifes: Int = 3
     
-    @IBOutlet weak var score: UILabel!
     @IBOutlet weak var punti: UILabel!
-    
-    
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var spriteLife1Outlet: UIImageView!
+    @IBOutlet weak var spriteLife2Outlet: UIImageView!
+    @IBOutlet weak var spriteLife3Outlet: UIImageView!
     
     
     @IBAction func buttonBlitzAction(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            punti.text! = blitz1.valueBlitz != 9 ? "\((Int(punti.text!)! + blitz1.valueBlitz))" : punti.text!
+            if blitz1.valueBlitz == 9 {
+                perdiVita()
+            } else {
+                punti.text! = "\((Int(punti.text!)! + blitz1.valueBlitz))"
+            }
             blitz1.clicked()
         case 2:
-            punti.text! = blitz2.valueBlitz != 9 ? "\((Int(punti.text!)! + blitz2.valueBlitz))" : punti.text!
+            if blitz2.valueBlitz == 9 {
+                perdiVita()
+            } else {
+                punti.text! = "\((Int(punti.text!)! + blitz2.valueBlitz))"
+            }
             blitz2.clicked()
         case 3:
-            punti.text! = blitz3.valueBlitz != 9 ? "\((Int(punti.text!)! + blitz3.valueBlitz))" : punti.text!
+            if blitz3.valueBlitz == 9 {
+                perdiVita()
+            } else {
+                punti.text! = "\((Int(punti.text!)! + blitz3.valueBlitz))"
+            }
             blitz3.clicked()
         case 4:
-            punti.text! = blitz4.valueBlitz != 9 ? "\((Int(punti.text!)! + blitz4.valueBlitz))" : punti.text!
+            if blitz4.valueBlitz == 9 {
+                perdiVita()
+            } else {
+                punti.text! = "\((Int(punti.text!)! + blitz4.valueBlitz))"
+            }
             blitz4.clicked()
         case 5:
-            punti.text! = blitz5.valueBlitz != 9 ? "\((Int(punti.text!)! + blitz5.valueBlitz))" : punti.text!
+            if blitz5.valueBlitz == 9 {
+                perdiVita()
+            } else {
+                punti.text! = "\((Int(punti.text!)! + blitz5.valueBlitz))"
+            }
             blitz5.clicked()
         default:
             print("Error: button not recognized")
@@ -101,12 +121,36 @@ class Scenario1ViewController: UIViewController {
     //==============================================
     var timerGioco = Timer()
     var timerLabel = Timer()
+    
     @objc func timerGiocoFunc() {
         if Int(punti.text!)! >= 50 {
             print("si")
         } else {
             print("no")
         }
+    }
+    
+    @objc func timeLabel() {
+        if time.text! != "0" {
+        time.text! = String(Int(time.text!)! - 1)
+        } else {
+            timerLabel.invalidate()
+        }
+    }
+    
+    func perdiVita() {
+        switch lifes {
+        case 1:
+            spriteLife3Outlet.alpha = 0.0
+        case 2:
+            spriteLife2Outlet.alpha = 0.0
+        case 3:
+            spriteLife1Outlet.alpha = 0.0
+        default:
+            print("Error: life error")
+        }
+        
+        lifes -= 1
     }
     
     //==============================================
@@ -185,13 +229,7 @@ class Scenario1ViewController: UIViewController {
      */
     
     
-    @objc func timeLabel() {
-        if time.text! != "0" {
-        time.text! = String(Int(time.text!)! - 1)
-        } else {
-            timerLabel.invalidate()
-        }
-    }
+    
     
     /*
     // MARK: - Navigation

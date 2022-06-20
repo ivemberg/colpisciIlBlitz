@@ -45,24 +45,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="3" title=""/>
+                                <connections>
+                                    <action selector="buttonBlitzAction:" destination="vda-vn-kWD" eventType="touchUpInside" id="yTV-ma-gMI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXa-Tp-Sso">
                                 <rect key="frame" x="473" y="39" width="53" height="77"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="4"/>
+                                <connections>
+                                    <action selector="buttonBlitzAction:" destination="vda-vn-kWD" eventType="touchUpInside" id="kDq-Eg-jg8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7k-xJ-xm2">
-                                <rect key="frame" x="520" y="287" width="75" height="53"/>
+                                <rect key="frame" x="520" y="272" width="75" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="5"/>
+                                <connections>
+                                    <action selector="buttonBlitzAction:" destination="vda-vn-kWD" eventType="touchUpInside" id="kT7-bV-TvA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2L-So-wYi">
                                 <rect key="frame" x="232" y="168" width="63" height="99"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="2" title=""/>
+                                <connections>
+                                    <action selector="buttonBlitzAction:" destination="vda-vn-kWD" eventType="touchUpInside" id="dRw-4p-HkA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cU0-My-6i3">
                                 <rect key="frame" x="48" y="0.0" width="67" height="28"/>
@@ -109,7 +121,9 @@
                         <outlet property="buttonBlitz4Outlet" destination="RXa-Tp-Sso" id="9OP-cL-DOM"/>
                         <outlet property="buttonBlitz5Outlet" destination="t7k-xJ-xm2" id="oHV-jy-gZa"/>
                         <outlet property="punti" destination="n0e-he-4vT" id="xqv-Vb-JyO"/>
-                        <outlet property="score" destination="cU0-My-6i3" id="qxh-Uw-aHR"/>
+                        <outlet property="spriteLife1Outlet" destination="gIN-V6-wOX" id="nk2-Qr-lJw"/>
+                        <outlet property="spriteLife2Outlet" destination="Kge-mV-pJ0" id="hfs-zC-BYL"/>
+                        <outlet property="spriteLife3Outlet" destination="clY-9I-yyk" id="auG-5R-raG"/>
                         <outlet property="time" destination="DA9-r1-BUe" id="hkQ-NT-k0f"/>
                     </connections>
                 </viewController>
