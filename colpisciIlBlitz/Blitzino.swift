@@ -6,6 +6,7 @@ class Blitzino {
     var timerSpawn = Timer()
     var timerDespawn = Timer()
     var valueBlitz: Int = 0
+    var controllo: Bool = true
     
     init(){
         buttonOutlet = UIButton()
@@ -16,8 +17,6 @@ class Blitzino {
         timerSpawn = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerSpawnFunc), userInfo: nil, repeats: false)
         buttonOutlet.alpha = 0.0
         buttonOutlet.isEnabled = false
-        print(buttonOutlet)
-        print(buttonOutlet.frame.width)
     }
     
     func randomBlitz() {
@@ -44,8 +43,6 @@ class Blitzino {
             valueBlitz = 9
         }
         
-        print(buttonOutlet)
-        
         buttonOutlet.setImage(UIImage(named: String(valueBlitz)), for: UIControl.State.normal)
         moveButton()
         buttonOutlet.alpha = 1.0
@@ -54,7 +51,9 @@ class Blitzino {
     }
     
     @objc func timerSpawnFunc() {
-        randomBlitz()
+        if controllo {
+            randomBlitz()
+        }
     }
     
     @objc func timerDespawnFunc() {
@@ -134,6 +133,13 @@ class Blitzino {
         // Offset the button's center by the random offsets.
         buttonOutlet.center.x = xoffset + buttonWidth / 2
         buttonOutlet.center.y = yoffset + buttonHeight / 2
+    }
+    
+    func invalidateBlitz() {
+        self.controllo = false
+        self.timerSpawn.invalidate()
+        self.timerDespawn.invalidate()
+        self.buttonOutlet.removeFromSuperview()
     }
 }
 

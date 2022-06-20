@@ -11,6 +11,8 @@ import AVFoundation
 
 class Scenario1ViewController: UIViewController {
     var gameTrackPlayer: AVAudioPlayer!
+    var scudettoPlayer: AVAudioPlayer!
+    var pentitoPlayer: AVAudioPlayer!
     
     var lifes: Int = 3
     
@@ -19,50 +21,60 @@ class Scenario1ViewController: UIViewController {
     @IBOutlet weak var spriteLife1Outlet: UIImageView!
     @IBOutlet weak var spriteLife2Outlet: UIImageView!
     @IBOutlet weak var spriteLife3Outlet: UIImageView!
-    
+    @IBOutlet weak var buttonBossFinaleOutlet: UIButton!
+    @IBOutlet weak var buttonPentitoOutlet: UIButton!
     
     @IBAction func buttonBlitzAction(_ sender: UIButton) {
         switch sender.tag {
         case 1:
-            if blitz1.valueBlitz == 9 {
+            if blitz1!.valueBlitz == 9 {
                 perdiVita()
+                break
             } else {
-                punti.text! = "\((Int(punti.text!)! + blitz1.valueBlitz))"
+                punti.text! = "\((Int(punti.text!)! + blitz1!.valueBlitz))"
             }
-            blitz1.clicked()
+            blitz1!.clicked()
         case 2:
-            if blitz2.valueBlitz == 9 {
+            if blitz2!.valueBlitz == 9 {
                 perdiVita()
+                break
             } else {
-                punti.text! = "\((Int(punti.text!)! + blitz2.valueBlitz))"
+                punti.text! = "\((Int(punti.text!)! + blitz2!.valueBlitz))"
             }
-            blitz2.clicked()
+            blitz2!.clicked()
         case 3:
-            if blitz3.valueBlitz == 9 {
+            if blitz3!.valueBlitz == 9 {
                 perdiVita()
+                break
             } else {
-                punti.text! = "\((Int(punti.text!)! + blitz3.valueBlitz))"
+                punti.text! = "\((Int(punti.text!)! + blitz3!.valueBlitz))"
             }
-            blitz3.clicked()
+            blitz3!.clicked()
         case 4:
-            if blitz4.valueBlitz == 9 {
+            if blitz4!.valueBlitz == 9 {
                 perdiVita()
+                break
             } else {
-                punti.text! = "\((Int(punti.text!)! + blitz4.valueBlitz))"
+                punti.text! = "\((Int(punti.text!)! + blitz4!.valueBlitz))"
             }
-            blitz4.clicked()
+            blitz4!.clicked()
         case 5:
-            if blitz5.valueBlitz == 9 {
+            if blitz5!.valueBlitz == 9 {
                 perdiVita()
+                break
             } else {
-                punti.text! = "\((Int(punti.text!)! + blitz5.valueBlitz))"
+                punti.text! = "\((Int(punti.text!)! + blitz5!.valueBlitz))"
             }
-            blitz5.clicked()
+            blitz5!.clicked()
         default:
             print("Error: button not recognized")
         }
         
         
+    }
+    
+    @IBAction func finalScreen(_ sender: UIButton) {
+        gameTrackPlayer.stop()
     }
     
     @IBAction func moveButton(button: UIButton) {
@@ -113,6 +125,11 @@ class Scenario1ViewController: UIViewController {
         // blitz 5
         blitz5 = Blitzino(buttonBlitz5Outlet)
         
+        // schermate finali
+        buttonBossFinaleOutlet.alpha = 0.0
+        buttonBossFinaleOutlet.isEnabled = false
+        buttonPentitoOutlet.alpha = 0.0
+        buttonPentitoOutlet.isEnabled = false
     }
     
     
@@ -123,10 +140,10 @@ class Scenario1ViewController: UIViewController {
     var timerLabel = Timer()
     
     @objc func timerGiocoFunc() {
-        if Int(punti.text!)! >= 50 {
-            print("si")
+        if Int(punti.text!)! >= 200 {
+            fineGame(true)
         } else {
-            print("no")
+            fineGame(false)
         }
     }
     
@@ -142,49 +159,76 @@ class Scenario1ViewController: UIViewController {
         switch lifes {
         case 1:
             spriteLife3Outlet.alpha = 0.0
+            print("1")
+            fineGame(false)
         case 2:
             spriteLife2Outlet.alpha = 0.0
+            print("2")
         case 3:
             spriteLife1Outlet.alpha = 0.0
+            print("3")
         default:
             print("Error: life error")
         }
-        
+        print("lifes")
         lifes -= 1
+    }
+    
+    @objc func fineGame(_ boss: Bool) {
+        blitz1!.invalidateBlitz()
+        blitz1 = nil
+        blitz2!.invalidateBlitz()
+        blitz2 = nil
+        blitz3!.invalidateBlitz()
+        blitz3 = nil
+        blitz4!.invalidateBlitz()
+        blitz4 = nil
+        blitz5!.invalidateBlitz()
+        blitz5 = nil
+        
+        if boss {
+            buttonBossFinaleOutlet.alpha = 1.0
+            buttonBossFinaleOutlet.isEnabled = true
+        } else {
+            gameTrackPlayer.stop()
+            playPentito()
+            buttonPentitoOutlet.alpha = 1.0
+            buttonPentitoOutlet.isEnabled = true
+        }
     }
     
     //==============================================
     // gestione blitz 1
     //==============================================
     @IBOutlet weak var buttonBlitz1Outlet: UIButton!
-    var blitz1: Blitzino = Blitzino()
+    var blitz1: Blitzino? = nil
     
     //==============================================
     // gestione blitz 2
     //==============================================
     @IBOutlet weak var buttonBlitz2Outlet: UIButton!
-    var blitz2: Blitzino = Blitzino()
+    var blitz2: Blitzino? = nil
     
     
     //==============================================
     // gestione blitz 3
     //==============================================
     @IBOutlet weak var buttonBlitz3Outlet: UIButton!
-    var blitz3: Blitzino = Blitzino()
+    var blitz3: Blitzino? = nil
     
     
     //==============================================
     // gestione blitz 4
     //==============================================
     @IBOutlet weak var buttonBlitz4Outlet: UIButton!
-    var blitz4: Blitzino = Blitzino()
+    var blitz4: Blitzino? = nil
     
     
     //==============================================
     // gestione blitz 5
     //==============================================
     @IBOutlet weak var buttonBlitz5Outlet: UIButton!
-    var blitz5: Blitzino = Blitzino()
+    var blitz5: Blitzino? = nil
     
     
     //==============================================
@@ -203,6 +247,50 @@ class Scenario1ViewController: UIViewController {
             gameTrackPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             
             guard let player = gameTrackPlayer else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print("Error was detected")
+            print(error.localizedDescription)
+        }
+    }
+    
+    func playScudetto() {
+        guard let url = Bundle.main.url(forResource: "mp3/scudettoSound", withExtension: "mp3") else {
+            print("RETURNING ")
+            return
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            scudettoPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = scudettoPlayer else { return }
+            
+            player.play()
+            
+        } catch let error {
+            print("Error was detected")
+            print(error.localizedDescription)
+        }
+    }
+    
+    func playPentito() {
+        guard let url = Bundle.main.url(forResource: "mp3/povero-gabbiano", withExtension: "mp3") else {
+            print("RETURNING ")
+            return
+        }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            pentitoPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+            
+            guard let player = pentitoPlayer else { return }
             
             player.play()
             

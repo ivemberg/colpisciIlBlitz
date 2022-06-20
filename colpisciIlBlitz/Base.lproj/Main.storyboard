@@ -116,6 +116,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="BOSS FINALE"/>
                                 <connections>
+                                    <action selector="finalScreen:" destination="vda-vn-kWD" eventType="touchUpInside" id="cRV-ts-hAP"/>
                                     <segue destination="Nu6-mE-hKE" kind="show" id="jKL-LX-S7n"/>
                                 </connections>
                             </button>
@@ -126,6 +127,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="PENTITO"/>
                                 <connections>
+                                    <action selector="finalScreen:" destination="vda-vn-kWD" eventType="touchUpInside" id="IDK-NE-M8h"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="7Ck-DG-hXK"/>
                                 </connections>
                             </button>
@@ -140,6 +142,8 @@
                         <outlet property="buttonBlitz3Outlet" destination="i33-vz-OPj" id="1wQ-JR-vje"/>
                         <outlet property="buttonBlitz4Outlet" destination="RXa-Tp-Sso" id="9OP-cL-DOM"/>
                         <outlet property="buttonBlitz5Outlet" destination="t7k-xJ-xm2" id="oHV-jy-gZa"/>
+                        <outlet property="buttonBossFinaleOutlet" destination="cqV-A1-oHq" id="oL5-5Q-6ZU"/>
+                        <outlet property="buttonPentitoOutlet" destination="oBy-0b-aWO" id="GXq-cJ-nde"/>
                         <outlet property="punti" destination="n0e-he-4vT" id="xqv-Vb-JyO"/>
                         <outlet property="spriteLife1Outlet" destination="gIN-V6-wOX" id="nk2-Qr-lJw"/>
                         <outlet property="spriteLife2Outlet" destination="Kge-mV-pJ0" id="hfs-zC-BYL"/>
@@ -207,6 +211,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="PENTITO"/>
                                 <connections>
+                                    <action selector="buttonEndAction:" destination="Nu6-mE-hKE" eventType="touchUpInside" id="UwI-Xr-aeh"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="mPw-J8-SMd"/>
                                 </connections>
                             </button>
@@ -217,6 +222,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="CHAPEAU!"/>
                                 <connections>
+                                    <action selector="buttonEndAction:" destination="Nu6-mE-hKE" eventType="touchUpInside" id="aB0-ms-fsv"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="XHf-xE-Ypj"/>
                                 </connections>
                             </button>
@@ -226,6 +232,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="9i5-JS-rkG"/>
                     <connections>
+                        <outlet property="buttonChapeauOutlet" destination="cdT-a9-0c8" id="ZEh-eh-GCC"/>
+                        <outlet property="buttonPentitoOutlet" destination="Blo-tX-kNh" id="q4f-Ro-hBF"/>
                         <outlet property="hp" destination="WDl-Ht-weq" id="tbI-uM-BGe"/>
                         <outlet property="hpLabel" destination="oQO-9b-N0O" id="Szb-0j-LHb"/>
                         <outlet property="time" destination="OwF-el-amp" id="StA-jt-LHX"/>
