@@ -135,6 +135,12 @@ class Blitzino {
         buttonOutlet.center.x = xoffset + buttonWidth / 2
         buttonOutlet.center.y = yoffset + buttonHeight / 2
     }
+    
+    func invalidateBlitz() {
+        self.timerDespawn.invalidate()
+        self.timerSpawn.invalidate()
+        self.buttonOutlet.removeFromSuperview()
+    }
 }
 
 

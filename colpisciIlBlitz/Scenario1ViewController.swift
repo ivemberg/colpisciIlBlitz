@@ -95,7 +95,8 @@ class Scenario1ViewController: UIViewController {
         
         playGameTrack()
         // timer di gioco
-        timerGioco = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerGiocoFunc), userInfo: nil, repeats: false)
+        //timerGioco = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(timerGiocoFunc), userInfo: nil, repeats: false)
+        timerGioco = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(fineGame), userInfo: nil, repeats: false)
         timerLabel = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timeLabel), userInfo: nil, repeats: true)
         
         // blitz 1
@@ -123,10 +124,10 @@ class Scenario1ViewController: UIViewController {
     var timerLabel = Timer()
     
     @objc func timerGiocoFunc() {
-        if Int(punti.text!)! >= 50 {
-            print("si")
+        if Int(punti.text!)! >= 100 {
+            fineGame(true)
         } else {
-            print("no")
+            fineGame(false)
         }
     }
     
@@ -140,6 +141,8 @@ class Scenario1ViewController: UIViewController {
     
     func perdiVita() {
         switch lifes {
+        case 0:
+            fineGame(false)
         case 1:
             spriteLife3Outlet.alpha = 0.0
         case 2:
@@ -151,6 +154,20 @@ class Scenario1ViewController: UIViewController {
         }
         
         lifes -= 1
+    }
+    
+    @objc func fineGame(_ boss: Bool) {
+        blitz1.invalidateBlitz()
+        blitz2.invalidateBlitz()
+        blitz3.invalidateBlitz()
+        blitz4.invalidateBlitz()
+        blitz5.invalidateBlitz()
+        
+        if boss {
+            
+        } else {
+            
+        }
     }
     
     //==============================================
