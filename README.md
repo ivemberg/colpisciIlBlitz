@@ -24,3 +24,5 @@ This is the area where you can play. Hit as many blitzes as possible, if you tot
 #BOSS_ARENA
 
 This is the last level of the game, you have 10 seconds to hit and defeat the Gigachad Blitz
+
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-06-21 at 11 56 37](https://user-images.githubusercontent.com/66513963/174772928-c620fd62-1a3d-4dc0-9b06-c95d39b3b000.png)
